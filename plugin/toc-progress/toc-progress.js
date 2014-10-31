@@ -132,9 +132,17 @@ toc_progress.create=function()
 						a_element.setAttribute('href','#/'+main_sections_index.toString());
 						a_element.appendChild(document.createTextNode(title_element.textContent));
 						li_element.appendChild(a_element);
-						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
-						style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
+						// controls styling of main section text when active
+						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;font-size:2vh;}\n';
+						// controls styling of main section text when subsection is active
+						style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;font-size:2vh;}\n';
+
 						style_node.textContent=style_node.textContent+'html:not([class*="toc-progress-'+main_sections_index.toString()+'-"]):not([class="toc-progress-'+main_sections_index.toString()+'"]) li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: none;}\n';
+
+						style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: inline;}\n';
+						style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'"] li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: inline;}\n';
+
+
 					}
 					else
 					{
@@ -151,9 +159,11 @@ toc_progress.create=function()
 						toc_progress_footer_secondary_inside_ul_ul.appendChild(li_element);
 						var a_element=document.createElement('a');
 						a_element.setAttribute('href','#/'+main_sections_index.toString()+'/'+secondary_sections_index.toString());
-						a_element.appendChild(document.createTextNode(title_element.textContent));
+						a_element.appendChild(document.createTextNode('\u25CF'));
+						// : This line generates the bullet for the sub-sections. Restore to line below to fix
+						// a_element.appendChild(document.createTextNode(title_element.textContent));
 						li_element.appendChild(a_element);
-						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' {font-weight: bold;}\n';
+						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' {font-weight: bold;font-size:2vh; -webkit-text-stroke: 4px;  font-size:2vh;}\n';
 					};
 				}
 				else if (title_element==null)
@@ -200,6 +210,7 @@ toc_progress.create=function()
 				style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
 				style_node.textContent=style_node.textContent+'html[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
 				style_node.textContent=style_node.textContent+'html:not([class*="toc-progress-'+main_sections_index.toString()+'-"]):not([class="toc-progress-'+main_sections_index.toString()+'"]) li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: none;}\n';
+
 			}
 			else if (title_element==null)
 			{
