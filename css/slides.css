@@ -1,0 +1,65 @@
+@import url("reveal.css");
+#toc-progress-footer-main-inside ul {
+  width: 100%;
+  text-align: center;
+}
+#toc-progress-footer-main-inside ul li {
+  display: inline;
+  padding-left: 15px;
+  text-align: center;
+}
+#toc-progress-footer-secondary {
+  margin-left: 0px;
+}
+#toc-progress-footer-secondary-inside {
+  margin-left: 0px;
+}
+#toc-progress-footer-secondary-inside {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+#toc-progress-footer-secondary-inside ul {
+  margin-left: 0px;
+  width: 100%;
+  text-align: center;
+}
+#toc-progress-footer-secondary-inside ul ul li {
+  margin-right: 5px;
+}
+#toc-progress-footer-secondary-inside ul ul li a {
+  color: auto;
+}
+#toc-progress-footer-secondary-inside ul li {
+  padding-right: 15px;
+  text-align: center;
+}
+#toc-progress-footer-secondary-inside ul li a {
+  text-align: center;
+}
+.reveal embed {
+  max-height: 95%;
+  max-width: 95%;
+  overflow: visible;
+}
+.reveal h2.title {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  margin-left: -10vw;
+  margin-right: -10vw;
+  word-wrap: visible;
+}
+.reveal .slide-number {
+  opacity: 1;
+  transition: opacity 800ms ease-in-out;
+  position: fixed;
+  bottom: 3px;
+  height: 3vh;
+  z-index: 31;
+  width: 100%;
+  font-size: 3vh;
+  text-align: right;
+  letter-spacing: 0em;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
