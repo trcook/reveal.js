@@ -1,0 +1,3 @@
+[submodule "plugin/Reveal.js-TOC-Progress"]
+	path = plugin/Reveal.js-TOC-Progress
+	url = https://github.com/trcook/Reveal.js-TOC-Progress.git
